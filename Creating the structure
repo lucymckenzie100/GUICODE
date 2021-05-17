@@ -1,0 +1,35 @@
+f=figure('position', [700 50 1000 1000], 'name', 'GUI', 'NumberTitle', 'off') %%Giving a name and positioning a figure for the GUI
+
+title = uicontrol('Style','text',"BackgroundColor",'White','FontSize',20); %%creating a titletextbox and setting the properties for the title 
+title.Position=[325 700 350 65] %%position of the title
+title.String = ['Operator Control Panel'] %%The title being set to 'Operator Control Panel' 
+
+joint1Anglebox = uicontrol('Style','edit'); %%created an angle box 
+joint1Anglebox.Position=[100 500 75 50] %%Position of angle box
+joint1Angleboxlabel = uicontrol('style','text') %%created a textbox
+joint1Angleboxlabel.Position=[25 525 75 15] %%position of the textbox
+joint1Angleboxlabel.String=['Joint 1 Angle'] %%Labelled the box to 'joint 1 Angle'
+
+
+joint2Anglebox = uicontrol('Style','edit'); %%created another angle box
+joint2Anglebox.Position=[100 450 75 50] %%Position of angle box
+joint2Angleboxlabel = uicontrol('style','text') %%created a textbox
+joint2Angleboxlabel.Position=[25 475 75 15] %%position of the textbox
+joint2Angleboxlabel.String=['Joint 2 Angle'] %%Labelled the box to 'joint 2 Angle'
+
+joint3Anglebox = uicontrol('Style','edit'); %%created 3rd angle box
+joint3Anglebox.Position=[100 400 75 50] %%position of angle box
+joint3Angleboxlabel = uicontrol('style','text') %%created a textbox
+joint3Angleboxlabel.Position=[25 425 75 15] %%position of the textbox
+joint3Angleboxlabel.String=['Joint 3 Angle'] %%Labelled the box to 'joint 3 Angle'
+
+
+joint4Anglebox = uicontrol('Style','edit'); %%created last angle box
+joint4Anglebox.Position=[100 350 75 50] %%position of the angle box
+joint4Angleboxlabel = uicontrol('style','text') %%create a textbox
+joint4Angleboxlabel.Position=[25 375 75 15] %%position of the textbox
+joint4Angleboxlabel.String=['Joint 4 Angle'] %%Labelled the box to 'joint 4 Angle'
+
+pushbutton= uicontrol('Style','pushbutton','FontSize',15); %%created a pushbutton, with font size defined
+pushbutton.Position=[400 150 200 50] %%position of the pushbutton box 
+pushbutton.String=['FEEDBACK'] %%set the box to 'FEEDBACK'
