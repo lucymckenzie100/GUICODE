@@ -1,0 +1,58 @@
+f=figure('position', [700 50 1000 1000], 'name', 'GUI', 'NumberTitle', 'off') %%Giving a name and positioning a figure for the GUI
+
+title = uicontrol('Style','text',"BackgroundColor",'White','FontSize',20); %%creating a titletextbox and setting the properties for the title 
+title.Position=[325 700 350 65] %%position of the title
+title.String = ['Operator Control Panel'] %%The title being set to 'Operator Control Panel' 
+
+
+pushbutton= uicontrol('Style','pushbutton','FontSize',15); %%created a pushbutton, with font size defined
+pushbutton.Position=[350 100 200 50] %%position of the pushbutton box 
+pushbutton.String=['FEEDBACK'] %%set the box to 'FEEDBACK'
+
+Slide=uicontrol('style', 'slider', 'min',0,'max', 180); %%Slider feature created 
+Slide.Position=[350 175 200 50]%%slider position stated
+Slidelabel = uicontrol('style','text') %%Slider text Label Created 
+Slidelabel.String=['Angle Range for limb 1'] %%setting the label to 'angle range'
+Slidelabel.Position=[150 160 200 50] %%setting the label position 
+
+Slide2=uicontrol('style', 'slider', 'min',0,'max', 180); %%Slider feature created 
+Slide2.Position=[350 100 200 50]%%slider position stated
+Slidelabel2 = uicontrol('style','text') %%Slider text Label Created 
+Slidelabel2.String=['Angle Range for limb 2'] %%setting the label to 'angle range'
+Slidelabel2.Position=[150 100 200 50] %%setting the label position 
+
+
+
+xvaluebox=uicontrol('style','text') %%create textbox called xvaluebox
+xvaluebox.Position=[700 500 75 15] %%position the textbox
+xvaluebox.String=['X value'] %%set the string property of the text box to 'X Value'
+
+
+yvaluebox=uicontrol('style','text') %%create textbox called yvalueboxlabel
+yvaluebox.Position=[700 450 75 15] %%position the textbox
+yvaluebox.String=['Y value']%%set the string property of the text box to 'Y Value'
+
+
+zvaluebox = uicontrol('style','text') %%create textbox called zvalueboxlabel
+zvaluebox.Position=[700 400 75 15] %%position the textbox
+zvaluebox.String=['Z value'] %%set the string property of the text box to 'Z Value'
+
+
+
+h=subplot('position',[0.2 0.35 0.45 0.4]);%% Creating The Graph and position
+L1= 1500; %% Variable set - The length of scara robot LIMB 1 
+theta1 = 500 ; %Angle of limb in degrees
+
+x1= L1*cosd(theta1);%%to calculate joint position
+y1= L1*sind(theta1);
+
+L2=1700;%% Variable set - The length of scara robot LIMB 2
+theta2=180; %%Angle of limb in degrees
+
+x2=x1+L2*cosd(theta2);%%to calculate second join position 
+y2=y1+L2*sind(theta2);
+
+plot(x1,y1,'-o', 'markersize',10) %%To plot the 
+ axis([-2000 -1000 0 1500])
+ hold on;
+ plot(x2,y2,'-x', 'markersize', 10)
