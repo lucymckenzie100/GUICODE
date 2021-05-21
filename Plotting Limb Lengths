@@ -1,0 +1,43 @@
+%%to clear the command window 
+clear
+clc
+close all
+format compact
+
+%%setting the variables 
+l1 = 1100; %% length of first limb
+theta1=40 %%Angle of first limb
+
+l2 = 1300; %% length of second Limb
+theta2=45 %%Angle of second limb
+
+
+
+%%creating the for loop to plot all posible positions on the graph 
+for theta1 = 0:5:180; %%polotting from 0 to 180 degrees 
+  theta1=deg2rad(theta1) %%chnaging theta from degrees to radians 
+    
+x1=l1*cos(theta1); %%using Trigonomarty   
+y1=l1*sin(theta1); %%Calculating X and Y values 
+
+
+    for theta2 = 0:5:120;
+    theta2 = theta1 + deg2rad(theta2);
+    
+x2=x1+l2*cos(theta2); %%Using Triaganomarty  
+y2=y1+l2*sin(theta2);%% Calculating X and Y values at the second point 
+
+
+    
+
+plot(x1,y1,'-o', 'markersize',10)
+axis([-3000 3000 0 3000])
+hold on
+
+plot(x2,y2,'-x', 'markersize',10)
+axis([-3000 3000 0 3000])
+hold on
+
+end
+
+end
